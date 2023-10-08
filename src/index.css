@@ -1,13 +1,191 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.home-style-wrap1{
+  margin-top: 50px;
+  padding: 10px 20px;
+}
+.home-head-button{
+  color: grey;
+  font-weight: bold;
+  border: none;
+  background-color: white;
+  padding:0.5rem 0.6rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.Category-Cards-wrapper{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.Category-Card-Style{
+  margin:10px;
+  width:250px;
+  cursor:pointer;
+}
+.Category-Card-text{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.Womens-page-wrapper{
+  min-height: 100vh;
+}
+.Headings{
+  font-size: 2rem;
+  font-weight: bold;
+}
+.Heading-description{
+  font-size: 1.2rem;
+  margin:0.5rem;
+}
+
+/*============== ||  CARD STYLE OF THE WEB APP  || ============= */
+
+.heading-Style{
+  font-size: 2.5rem;
+  color: goldenrod;
+  margin: 1.2rem 2rem;
+}
+.Card-Style-container{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2rem;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.Card-Image-wrap{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+}
+.Card-Image{
+  object-fit: contain;
+  object-position: center;
+  width: 90%;
+  height: 100%;
+}
+.Card-Style{
+  width: 300px;
+  height: 450px;
+  margin: 0.5rem;
+  /* border: 2px solid black; */
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.Card-Style:hover{
+  box-shadow: 10px 10px 15px gainsboro;
+}
+.Card-Style p{
+  font-weight: bold;
+}
+
+
+/* =============== || Product Detail Styling || =============== */
+
+.Image-collection{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+  margin: 0px auto;
+}
+.Image-collection img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  cursor: pointer;
+}
+.Images{
+  width:100px;
+  height:100px;
+  border: 1px solid black;
+
+}
+
+
+/* =============== || FONT STYLE || ================ */
+
+.heading2{
+  font-size: 2rem;
+  font-weight: bold;
+}
+.heading3{
+  font-size: 1.4rem;
+  line-height: 3ch;
+}
+.heading4{
+  font-size: 1.2rem;
+}
+
+.foot-siz-wrap{
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.foot-siz-wrap div{
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  border: 1px solid black;
+  padding: 0.5rem;
+  line-height: 3cap;
+  font-weight: bold;
+  font-size: 1rem;
+}
+.foot-siz-wrap div:hover{
+  background-color: black;
+  color: whitesmoke;
+}
+
+.button-style{
+  background-color: black;
+  color: white;
+  padding: 0.5rem 1.75rem;
+  margin: 0.5rem 1rem 0rem 0rem;
+  border-radius: 0.5rem;
+  border: 1px solid blue;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-size: 1rem;
+  cursor: pointer;
+  text-transform: uppercase;
+
+}
+.ProdDet-wrap{
+  width: 100%;
+  height: 100vh;
+  border: 5px solid orange;
+  display: flex;
+}
+.ProdDet-wrap1{
+  width: 50%;
+  border: 2px solid greenyellow;
+  padding: 1rem;
+}
+.ProdDet-wrap2{
+  width: 50%;
+  height: 100%;
+  border: 2px solid palevioletred;
+  padding: 1rem;
+}
+
+.zoom-image{
+  width:100%;
+  min-height: 500px;
+  object-fit:  cover;
+  object-position: center;
+  border: 2px solid red;
 }

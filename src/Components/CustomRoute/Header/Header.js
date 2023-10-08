@@ -1,6 +1,5 @@
 import React from "react";
-import { Grid, Box, Button } from "@mui/material";
-import { Facebook, Instagram, AddShoppingCart } from '@mui/icons-material';
+import { Grid, Box } from "@mui/material";
 import headerStyle from "./headerStyle";
 import Navigate from "./component/Navigation";
 import {Menu} from '@mui/icons-material';
@@ -9,8 +8,7 @@ import HeaderIcons from "./component/HeaderIcons";
 
 const useStyle = headerStyle;
 const Header = () => {
-    const classes = useStyle();
-
+    
     const isMobile = IsResponsive('down','md');
     return (
         <Box>

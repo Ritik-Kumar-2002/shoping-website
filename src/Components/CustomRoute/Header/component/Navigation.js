@@ -32,66 +32,7 @@ const Navigate = () => {
                                     </div>
                                 );
                             })}
-                            <Box
-                                style={{
-                                    padding: '0.8rem',
-                                    fontSize: '1rem', display: 'flex',
-                                    justifyContent: 'space-around',
-                                    width: '40%', fontWeight: 'bold',
-                                    cursor: 'pointer', color: 'grey'
-                                }}
-                            >
-                                {/* <Grid 
-                                    onClick={() => {
-                                    setOpen(!open)
-                                    disptach(ShowPaperAction(open))
-                                }} > SPORTS </Grid>
-                                <Grid 
-                                    onClick={() => {
-                                    setOpen(!open)
-                                    disptach(ShowPaperAction(open))
-                                }}> BRANDS </Grid>
-                                <Grid 
-                                    onClick={() => {
-                                    setOpen(!open)
-                                    disptach(ShowPaperAction(open))
-                                }}> COLLECTIONS </Grid> */}
-
-                                <Grid
-                                    onMouseEnter={() => {
-                                        dispatch(ShowPaper("SPORTS"))
-                                        dispatch(ShowPaperAction(true))
-                                    }}
-                                onClick = {()=> {
-                                    dispatch(ShowPaperAction(false))
-                                }} 
-                                > SPORTS </Grid>
-
-                                <Grid   onMouseEnter={() => {
-                                        dispatch(ShowPaper("BRANDS"))
-                                        dispatch(ShowPaperAction(true))
-                                    }}
-                                    onClick = {()=> {
-                                        dispatch(ShowPaperAction(false))
-                                    }}> BRANDS </Grid>
-
-                                <Grid   onMouseEnter={() => {
-                                        // setOpen(true)
-                                        dispatch(ShowPaper("COLLECTIONS"))
-                                        dispatch(ShowPaperAction(true))
-                                    }}
-                                    onClick = {()=> {
-                                        dispatch(ShowPaperAction(false))
-                                    }}> COLLECTIONS </Grid>
-                            </Box>
-                            <NavLink
-                                to={"/outlet"}
-                                style={{ padding: '0.8rem', fontWeight: 'bold', color: 'black' }}
-                            >
-                                <Grid item > OUT-LET </Grid>
-                            </NavLink>
-                            {/* <MainDrawer open={open} CloseDrawer={ToggleDrawer} /> */}
-                        </Box>
+                        </Box> 
                     }
                 </Grid>
             </Box>

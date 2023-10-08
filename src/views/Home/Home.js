@@ -1,16 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { Grid, Button, Box, CardMedia, Card, CardContent, Typography, InputAdornment } from "@mui/material";
-import Product from "./Components/Products";
+import Products from "./Components/Products";
 import AdidasCollection from "./Components/Collections";
-import { useState } from "react";
 import About from "./Components/About";
 import ShoeCategory from "./Components/ShoeCategory";
-import { Slide } from 'react-slideshow-image';
 import { useNavigate } from 'react-router-dom';
 import { setCartData } from "../../store/action/CartActions";
 import { useDispatch } from "react-redux";
-import { Favorite } from '@mui/icons-material';
-import Carousel from "react-multi-carousel";
 
 const Home = () => {
 
@@ -22,128 +18,105 @@ const Home = () => {
             // the naming can be any, depends on you.
             breakpoint: { max: 1000, min: 900 },
             items: 5
-          },
-          desktop: {
+        },
+        desktop: {
             breakpoint: { max: 900, min: 600 },
             items: 3
-          },
-          tablet: {
+        },
+        tablet: {
             breakpoint: { max: 600, min: 400 },
             items: 2
-          },
-          mobile: {
+        },
+        mobile: {
             breakpoint: { max: 400, min: 0 },
             items: 1
-          }
+        }
     };
     return (
         <>
-            <Grid item lg={12} sm={12} md={12} xs={12} >
+            <Grid item lg={12} sm={12} md={12} xs={12} className={"home-style-container"} >
                 <img src="https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/if_w_gt_1920,w_1920/enIN/Images/2880x1280Launch_tcm209-904346.jpg" width={"100%"} />
-                <img src="https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/if_w_gt_1920,w_1920/enIN/Images/2880x1280_tcm209-905973.jpg" width={"100%"} />
-
-                <Grid style={{ marginTop: "50px", padding: '10px 20px' }}>
-                    <Box>
-                        <Button style={{ color: 'gray' }} onClick={() => setCategory("Men")}> Men </Button>
-                        <Button style={{ color: 'gray' }} onClick={() => setCategory("WOMEN")}> Women </Button>
-                        <Button style={{ color: 'gray' }} onClick={() => setCategory("KIDS")}> Kids </Button>
-                    </Box>
-                    <Grid container style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
-                        {/* {console.log("product is ", Product)} */}
-                        {/* <Carousel responsive={responsive} container style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}> */}
-                        {Product.map((data, key) => {
-                            // console.log("data is ", data);
+                <Grid className={"home-style-wrap1"}>
+                    <div>
+                        <button className="home-head-button" onClick={() => setCategory("Men")}> Men </button>
+                        <button className="home-head-button" onClick={() => setCategory("WOMEN")}> Women </button>
+                        <button className="home-head-button" onClick={() => setCategory("KIDS")}> Kids </button>
+                    </div>
+                    <Grid className={"Category-Cards-wrapper"}>
+                        {Products.map((data, key) => {
                             return (
-                                <div key={Math.random()}>
-                                    {data.type === category && (<Card style={{ margin: '10px', width: '250px', cursor: 'pointer' }}>
+                                <div key={key}>
+                                    {data.type === category && (<Card className={"Category-Card-Style"} >
                                         <CardMedia
                                             component="img"
                                             style={{ width: '100%', objectFit: 'cover' }}
                                             image={data.image} />
                                         <CardContent>
-                                            <Typography style={{ fontSize: '1rem', fontWeight: 'bold' }}> {data.info} </Typography>
+                                            <p className={"Category-Card-text"}> {data.info} </p>
                                         </CardContent>
                                     </Card>)}
                                 </div>
                             );
                         })}
-                        {/* </Carousel > */}
+
                     </Grid>
                 </Grid>
 
                 {/* ------------------   NEW ARRIVAL ------------------ */}
 
-                <Grid>
-                    <Typography variant="h4" style={{ fontWeight: "bold", fontStyle: 'italic', padding: '20px 50px' }} > New Arrival </Typography>
-                    <Grid container item lg={11} md={12} sm={12} xs={12} style={{ display: 'flex', padding: '20px 30px', margin: 'auto' }} >
-                        {/* {console.log("shoe category is ", ShoeCategory)} */}
-                        {/* <Slide> */}
+                <div >
+                    <h2 variant="h4" className="heading-Style"> New Arrival </h2>
+                    <div container className={"Card-Style-container"} >
                         {ShoeCategory.map((data) => {
-                            // console.log("data is ", data);
+                           
                             return (
                                 <>
-                                    <Grid item lg={3} md={3} sm={4} xs={12}
-                                        className="HoverEffect"
-                                        style={{ padding: '10px ', height: '450px', cursor: 'pointer' }}
+                                    <div className="Card-Style"
                                         onClick={() => {
                                             navigate('productDetail')
                                             dispatch(setCartData(data))
                                         }}>
-                                      
-                                        <Card elevation={0}>
-                                        <div style={{position: 'absolute', paddingLeft: '12rem', paddingTop: '1rem' }} >
-                                            <Favorite />
-                                        </div>
-                                            <CardMedia
-                                                component='img'
-                                                image={data.image}
-                                                style={{ width: '100%', objectFit: 'cover' }}
-                                                InputProps={{
-                                                    startAdornment: (
-                                                        <InputAdornment position="start">
-                                                            <Favorite />
-                                                        </InputAdornment>
-                                                    )
-                                                }}
-                                            />
-                                            <CardContent>
-                                                <Typography variant="body2"> {data.price} </Typography>
-                                                <Typography variant="subheading2"> {data.name} </Typography>
-                                                <Typography variant="body2"> {data.category} </Typography>
+
+                                        <Card elevation={5}>
+                                            <div className="Card-Image-wrap">
+                                                <img src= {data.image} className="Card-Image"/>
+                                            </div>
+                                            <CardContent >
+                                                <p variant="body2"> {data.price} </p>
+                                                <p variant="subheading2"> {data.name} </p>
+                                                <p variant="body2"> {data.description} </p>
                                             </CardContent>
                                         </Card>
-                                    </Grid>
+                                    </div >
                                 </>
                             );
                         })}
-                        {/* </Slide> */}
 
-                    </Grid>
-                </Grid>
+                    </div>
+                </div>
 
                 {/* -------------------  WHAT'S HOTS  ------------------ */}
 
                 <Grid>
                     <h1 style={{ fontStyle: 'italic', padding: '20px 50px' }}> WHAT'S HOTS </h1>
                     <Box style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
-                        {/* {console.log("Adidas collections is ", AdidasCollection)} */}
+
                         {
                             AdidasCollection.map((data) => {
-                                // console.log("data is ", data);
+
                                 return (
                                     <div key={Math.random()}>
                                         <Card style={{ margin: '10px', width: '300px' }}>
                                             <CardMedia
                                                 component={data.type === 'image' ? "img" : "video"}
                                                 style={{ width: '100%', objectFit: 'fit' }}
-                                                // video={data.url} 
+
                                                 image={data.url}
                                             />
                                             <CardContent>
                                                 <Typography style={{ fontSize: '1rem' }}>
                                                     <strong> {data.heading} </strong>
                                                     <p> {data.info} </p>
-
                                                 </Typography>
                                             </CardContent>
                                         </Card>
@@ -159,7 +132,7 @@ const Home = () => {
                 <Grid>
                     <About />
                 </Grid>
-            </Grid>
+            </Grid >
         </>
     );
 }

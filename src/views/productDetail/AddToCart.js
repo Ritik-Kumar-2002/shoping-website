@@ -6,13 +6,13 @@ const AddToCartBox = (props) => {
 
     const open = useSelector((state) => state.AddToCartDialogReducer);
     const { OpenDialogBox, TotalData, setOpenDialogBox } = props;
+    console.log("props of addto cart div  is ", props);
     const navigate= useNavigate();
-    // console.log("cart data ", TotalData+" and set dialogue box function ", setOpenDialogBox);
-    // console.log("cart data is ", TotalData);
+   
     return (
         <>
             <Dialog open={OpenDialogBox} onClose={() => setOpenDialogBox(false)}>
-                <Box p={ 4}>
+                <Box p={4}>
                     <Typography variant='h4' fontWeight="bold"> SUCCESSFULLY ADDED TO BAG! </Typography>
                     <Grid container item lg={12} sm={12} xs={12} md={12} spacing={2}>
                         <Grid item container lg={6} sm={6} xs={6} md={6} spacing={2}>

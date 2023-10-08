@@ -7,7 +7,6 @@ import Women from "../../views/Women/Women";
 import Kids from "../../views/Kids/Kids";
 import Brand from "../../views/Brand/Brand";
 import Sport from "../../views/Sports/Sports";
-import Outlet from "../../views/Outlet/Outlet";
 import Collections from "../../views/Collections/Collections";
 import Return from "../../views/return/Return";
 import Help from "../../views/Help/help";
@@ -27,17 +26,14 @@ const CustomRoute = () =>{
     return(
         <>
             <Header />
-           
-            {/* <Home />  */}
             { showPaper ? < MainDrawer />: null}
             <Routes >
                 <Route exact path = "/" element={<Home />} />
                 <Route exact path = "/men" element={<Men />} />
-                <Route exact path = "women" element={<Women />} />
+                <Route exact path = "/women" element={<Women />} />
                 <Route exact path = "/kid" element={<Kids />} />
                 <Route exact path = "/sport" element={<Sport />} />
                 <Route exact path = "/brand" element={<Brand />} />
-                <Route exact path = "/outlet" element={<Outlet />} />
                 <Route exact path = "/collections" element={<Collections />} />
                 <Route exact path = "/return" element = {<Return />} />
                 <Route exact path = "/help" element = {<Help />} />
