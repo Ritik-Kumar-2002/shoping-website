@@ -121,11 +121,12 @@
   font-weight: bold;
 }
 .heading3{
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   line-height: 3ch;
 }
 .heading4{
-  font-size: 1.2rem;
+  font-size: 1em;
+  margin: 0.5rem;
 }
 
 .foot-siz-wrap{
@@ -167,25 +168,52 @@
 .ProdDet-wrap{
   width: 100%;
   height: 100vh;
-  border: 5px solid orange;
   display: flex;
 }
 .ProdDet-wrap1{
-  width: 50%;
-  border: 2px solid greenyellow;
+  height: 80vh;
   padding: 1rem;
 }
 .ProdDet-wrap2{
   width: 50%;
   height: 100%;
-  border: 2px solid palevioletred;
   padding: 1rem;
 }
 
 .zoom-image{
   width:100%;
-  min-height: 500px;
-  object-fit:  cover;
+  height: 500px;
   object-position: center;
-  border: 2px solid red;
+  object-fit: contain;
 }
+
+
+/* =================== || COLLECTION PAGE || ===================== */
+
+ /* FILTER WRAPPER BOX */
+
+ .filter-wrap{
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  cursor: pointer;
+ }
+ .filter-wrap h3{
+  margin: 0px 1rem;
+ }
+ .Wrap-Style{
+ 
+  display: flex;
+
+ }
+ .filter-wrap-style{
+  min-width: 300px;
+  height: 500px;
+  padding: 1rem;
+ }
+ .collection-wrap-box{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+ }

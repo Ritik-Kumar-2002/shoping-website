@@ -1,21 +1,18 @@
 import React, { useState } from "react";
-import { Box, Grid, Typography, Button } from '@mui/material'
 import { useSelector } from "react-redux";
 import InnerImageZoom from 'react-inner-image-zoom'
 import 'react-inner-image-zoom/lib/InnerImageZoom/styles.css'
 import { FavoriteBorder } from '@mui/icons-material';
-import { ReactImageZoomer } from 'react-image-zoomer-ch'
 import { useDispatch } from "react-redux";
 import AddToCartBox from "./AddToCart";
-
+import { AddToBag } from "../../store/action/AddtoBag";
 
 const ProductDetail = () => {
     const dispatch = useDispatch();
 
     const [OpenDialogBox, setOpenDialogBox] = useState(false);
     const cartData = useSelector((state) => state.CartReducer)
-    console.log("cart data is ", cartData);
-
+    
     const [FootwearSize, SetFootwearSize] = useState(-1);
     const [url, SetImageURL] = useState(cartData !== null ? cartData.image : "");
 
@@ -30,7 +27,9 @@ const ProductDetail = () => {
         <>
             <div className="ProdDet-wrap">
                 <div className="ProdDet-wrap1">
-                    <InnerImageZoom src={url} hideCloseButton='0' hideHint='0' zoomScale={2} className="zoom-image" />
+                    <div style={{border:'2px solid green'}}>
+                        <InnerImageZoom src={url} hideCloseButton='0' hideHint='0' zoomScale={2} className="zoom-image" />
+                    </div>
                     <div className="Image-collection">
                         <div className="Images">
                             <img src={cartData.image} onClick={() => SetImageURL(cartData.image)}></img>
@@ -72,9 +71,11 @@ const ProductDetail = () => {
                             onClick={() => {
                                 // dispatch(OpenAddToCartDialog(true))
                                 setOpenDialogBox(true)
+                                dispatch(AddToBag(CompleteProductDetail))
                             }
                             }>  Add to Cart &nbsp;  → </button>
-                        <AddToCartBox setOpenDialogBox={setOpenDialogBox} OpenDialogBox={OpenDialogBox} TotalData={CompleteProductDetail} />
+                        {/* <AddToCartBox setOpenDialogBox={setOpenDialogBox} OpenDialogBox={OpenDialogBox} 
+                        TotalData={CompleteProductDetail}/> */}
 
                         <FavoriteBorder />
                     </div>

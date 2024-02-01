@@ -18,7 +18,7 @@ import { useSelector } from "react-redux";
 import ProductDetail from "../../views/productDetail/ProductDetail";
 import ProductBag from "../../views/productBag/productBag";
 import Checkout from "../../views/CheckoutPages/Checkout";
-
+import Shop from "../../views/Shop/Shop";
 
 const CustomRoute = () =>{
 
@@ -35,6 +35,7 @@ const CustomRoute = () =>{
                 <Route exact path = "/sport" element={<Sport />} />
                 <Route exact path = "/brand" element={<Brand />} />
                 <Route exact path = "/collections" element={<Collections />} />
+                <Route exact path="/shop" element= {<Shop />} />
                 <Route exact path = "/return" element = {<Return />} />
                 <Route exact path = "/help" element = {<Help />} />
                 <Route exact path = "/ordertrack" element = {<OrderTrack />} />

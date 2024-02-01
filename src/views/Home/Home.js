@@ -12,6 +12,7 @@ const Home = () => {
 
     const navigate = useNavigate();
     const dispatch = useDispatch();
+    
     const [category, setCategory] = useState("Men");
     const responsive = {
         superLargeDesktop: {
@@ -84,7 +85,7 @@ const Home = () => {
                                             <CardContent >
                                                 <p variant="body2"> {data.price} </p>
                                                 <p variant="subheading2"> {data.name} </p>
-                                                <p variant="body2"> {data.description} </p>
+                                                {/* <p variant="body2"> {data.description} </p> */}
                                             </CardContent>
                                         </Card>
                                     </div >

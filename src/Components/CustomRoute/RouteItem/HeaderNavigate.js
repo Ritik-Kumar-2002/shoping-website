@@ -10,32 +10,37 @@ const HeaderNavigate = {
     type: 'group',
     children:[
         {
-            id: 'MEN',
+            id: '0',
+            title: 'HOME',
+            url: '/',
+        },
+        {
+            id: '1',
             title: 'MEN',
             url: '/men',
         },
         {
-            id: 'WWOMEN',
+            id: '2',
             title: 'WOMEN',
             url: 'women',
         },
         {
-            id: 'KIDS',
+            id: '3',
             title: 'KIDS',
             url: '/kid',
         },
         {
-            id: 'SPORT',
+            id: '4',
             title: 'SPORT',
             url: '/sport',
         },
         {
-            id: 'BRAND',
+            id: '5',
             title: 'BRAND',
             url: '/brand',
         },
         {
-            id: 'COLLECTIONS',
+            id: '6',
             title: 'COLLECTIONS',
             url: '/collections',
         },

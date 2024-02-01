@@ -1,12 +1,17 @@
 import { Typography, Box, Grid, Dialog, DialogTitle, Button } from '@mui/material';
 import React from 'react'
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import {useNavigate} from 'react-router-dom';
+
+
 const AddToCartBox = (props) => {
 
+    const dispatch = useDispatch();
+
     const open = useSelector((state) => state.AddToCartDialogReducer);
+    
     const { OpenDialogBox, TotalData, setOpenDialogBox } = props;
-    console.log("props of addto cart div  is ", props);
+    
     const navigate= useNavigate();
    
     return (
